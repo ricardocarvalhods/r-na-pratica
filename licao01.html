@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.datacamp.com/assets/favicon.ico'/>
+  <style>
+     /* Rearrange console label */
+    .datacamp-exercise ol li, .datacamp-exercise ul li {
+      margin-bottom: 0em !important;
+    }
+    
+    /* Remove bullet marker */
+    .datacamp-exercise ol li::before, .datacamp-exercise ul li::before {
+      content: '' !important;
+    }
+  </style>
+
+<script type="text/javascript" src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+
+  
+  
+   <script>
+      $(window).load(function(){
+        $('.dcl-btn-secondary')[0].innerText = 'Dica'
+        $('.dcl-btn-secondary')[1].innerText = 'Solução'
+        $('.dcl-btn-primary')[0].innerText = 'Executar'
+        $('.dcl-action-panel').append($('.powered-by-datacamp'))
+        $('.powered-by-datacamp a').css('font-size', '12px')
+        $('.dcl-hide-xxs')[0].innerText = 'Sessão Inativa (Clique no código para iniciar)'
+
+        console.log('Traducao feita')
+      });
+    </script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>What's that data type?</h2>
+    </div>
+    <div id="exum" data-datacamp-exercise data-show-run-button data-lang="r" data-height="350">
+      <code data-type="pre-exercise-code"># no pec</code>
+      <code data-type="sample-code">
+        # Declare variables of different types
+        my_numeric &lt;- 42
+        my_character &lt;- &quot;universe&quot;
+        my_logical &lt;- FALSE
+
+        # Check class of my_numeric
+        class(my_numeric)
+
+        # Check class of my_character
+
+
+        # Check class of my_logical
+      </code>
+      <code data-type="solution">
+        # Declare variables of different types:
+        my_numeric &lt;- 42
+        my_character &lt;- &quot;universe&quot;
+        my_logical &lt;- FALSE
+
+        # Check class of my_numeric
+        class(my_numeric)
+
+        # Check class of my_character
+        class(my_character)
+
+        # Check class of my_logical
+        class(my_logical)
+      </code>
+      <code data-type="sct">
+        msg &lt;- &quot;Do not change the declaration of the variables!&quot;
+        lapply(c(&quot;my_numeric&quot;, &quot;my_character&quot;, &quot;my_logical&quot;),
+        test_object, undefined_msg = msg, incorrect_msg = msg)
+        patt &lt;- &quot;Have you included `class(%1$s)` to print out the data type of
+        `%1$s`?&quot;
+        test_output_contains(&quot;class(my_numeric)&quot;,
+        incorrect_msg = &quot;Do not remove the code that prints out the type of
+        `my_numeric`.&quot;)
+        test_output_contains(&quot;class(my_character)&quot;,
+        incorrect_msg = sprintf(patt, &quot;my_character&quot;))
+        test_output_contains(&quot;class(my_logical)&quot;,
+        incorrect_msg = sprintf(patt, &quot;my_logical&quot;))
+        success_msg(&quot;Congratulations! This was the last exercise for this chapter. Head
+        over to the next chapter to get immersed in the world of vectors!&quot;)
+      </code>
+      <div data-type="hint">
+        <p>The code that prints the data type of
+          <code>my_numeric</code> is already included; do a similar things for
+          <code>my_character</code> and
+          <code>my_logical</code>.
+        </p>
+      </div>
+      
+      <script type="text/javascript">
+      DCL.init();
+      DCL.instances["exum"].on("feedback", payload => {
+        if (payload.correct) {
+          alert("You rock!");
+         console.log("AAAAAAHHHH");
+        }
+      });
+      </script>
+      
+    </div>
+  </div>
+  
+  
+
+</body>
+</html>
